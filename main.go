@@ -25,7 +25,7 @@ func main() {
 }
 
 func matchFunc(update *models.Update) bool {
-	if len(update.Message.NewChatMembers) > 0 {
+	if update != nil && update.Message != nil && update.Message.NewChatMembers != nil && len(update.Message.NewChatMembers) > 0 {
 		return true
 	}
 	return false
